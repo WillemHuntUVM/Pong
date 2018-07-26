@@ -24,4 +24,15 @@ public class Board {
 
     }
 
+    public void update() {
+
+    }
+
+    public int getLeftScore() {
+        return leftScore;
+    }
+
+    public int getRightScore() {
+        return rightScore;
+    }
 }
