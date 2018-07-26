@@ -5,6 +5,8 @@ import javafx.scene.paint.Color;
 public class Paddle {
 
     public static final Color COLOR = Color.WHITE;
+    public final static int PADDLE_HEIGHT = 100;
+    public final static int PADDLE_WIDTH  = 20;
 
     private final int width;
     private final int height;
@@ -17,12 +19,12 @@ public class Paddle {
      * @param yPos Y position.
      */
     Paddle(int yPos, Board board, int width, int height){
-        this.yPos   = yPos;
 
+        this.yPos   = yPos;
         this.width  = width;
         this.height = height;
-
         this.yVel = 0;
+
     }
 
     /**
@@ -30,7 +32,7 @@ public class Paddle {
      * @param velocity pixels per update.
      */
     public void setYVel(int velocity){
-
+        yVel = velocity;
     }
 
     /**

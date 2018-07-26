@@ -5,12 +5,6 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Game implements Runnable {
 
-    private final static int BOARD_HEIGHT = 500;
-    private final static int BOARD_WIDTH  = 700;
-
-    private final static int PADDLE_HEIGHT = 100;
-    private final static int PADDLE_WIDTH  = 20;
-
     private final static int    WIN_SCORE  = 10;
     private final        float  INTERVAL;
 
@@ -58,7 +52,7 @@ public class Game implements Runnable {
 
             if((board.getLeftScore() >= WIN_SCORE) || board.getRightScore() >= WIN_SCORE){
                 pause();
-                Graphics.paintResetMessage();
+                Graphics.paintResetMessage(board, context);
                 break;
             }
 
