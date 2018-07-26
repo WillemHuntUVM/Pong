@@ -5,8 +5,8 @@ import javafx.scene.paint.Color;
 public class Board {
 
     public static final Color   COLOR   = Color.BLACK;
-    public static final int     WIDTH   = 700;
-    public static final int     HEIGHT  = 500;
+    private       final int     WIDTH;
+    private       final int     HEIGHT;
 
     private Paddle leftPaddle;
     private Paddle rightPaddle;
@@ -14,11 +14,13 @@ public class Board {
     private int leftScore;
     private int rightScore;
 
-    Board(){
+    Board(int width, int height, Paddle leftPaddle, Paddle rightPaddle){
 
-        int startHeight = (Board.HEIGHT/2)-(Paddle.HEIGHT/2);
-        this.leftPaddle     = new Paddle(startHeight, this);
-        this.rightPaddle    = new Paddle(startHeight, this);
+        this.HEIGHT = height;
+        this.WIDTH  = width;
+
+        this.leftPaddle     = leftPaddle;
+        this.rightPaddle    = rightPaddle;
 
     }
 

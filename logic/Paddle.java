@@ -4,11 +4,10 @@ import javafx.scene.paint.Color;
 
 public class Paddle {
 
-    public static final Color   COLOR   = Color.WHITE;
-    public static final int     HEIGHT  = 100;
-    public static final int     WIDTH   = 20;
+    public static final Color COLOR = Color.WHITE;
 
-    private final Board board;
+    private final int width;
+    private final int height;
 
     private int yPos;
     private int yVel;
@@ -17,10 +16,13 @@ public class Paddle {
      * Constructor.  Takes in a starting Y position and a Board to link to.
      * @param yPos Y position.
      */
-    Paddle(int yPos, Board board){
-        this.yPos = yPos;
+    Paddle(int yPos, Board board, int width, int height){
+        this.yPos   = yPos;
+
+        this.width  = width;
+        this.height = height;
+
         this.yVel = 0;
-        this.board = board;
     }
 
     /**
@@ -45,13 +47,5 @@ public class Paddle {
      */
     public int getYVel(){
         return this.yVel;
-    }
-
-    /**
-     * Getter for Board.
-     * @return Board
-     */
-    public Board getBoard() {
-        return board;
     }
 }
