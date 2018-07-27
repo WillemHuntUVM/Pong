@@ -2,59 +2,79 @@ package logic;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Board.java
+ * Willem Hunt 2018
+ * Manages the game board and pieces, along with updating the game state.
+ */
 public class Board {
 
     public static final Color   COLOR   = Color.BLACK;
-    public final static int BOARD_HEIGHT = 500;
-    public final static int BOARD_WIDTH  = 700;
-    private       final int     WIDTH;
-    private       final int     HEIGHT;
+    public final static int HEIGHT = 500;
+    public final static int WIDTH = 700;
 
     private Paddle leftPaddle;
     private Paddle rightPaddle;
-    private Ball   ball;
+    private Ball ball;
 
     private int leftScore = 0;
     private int rightScore = 0;
 
-    Board(int width, int height, Paddle leftPaddle, Paddle rightPaddle){
-
-        this.HEIGHT = height;
-        this.WIDTH  = width;
-
+    /**
+     * Constructor
+     * @param leftPaddle Paddle
+     * @param rightPaddle Paddle
+     * @param ball Ball
+     */
+    Board(Paddle leftPaddle, Paddle rightPaddle, Ball ball){
         this.leftPaddle     = leftPaddle;
         this.rightPaddle    = rightPaddle;
-
+        this.ball           = ball;
     }
 
+    /**
+     * Updates the game state
+     */
     public void update() {
 
     }
 
+    /**
+     * Getter for leftScore
+     * @return leftScore
+     */
     public int getLeftScore() {
         return leftScore;
     }
 
+    /**
+     * Getter for rightScore
+     * @return rightScore
+     */
     public int getRightScore() {
         return rightScore;
     }
 
-    public double getWidth() {
-        return WIDTH;
-    }
-
-    public double getHeight() {
-        return HEIGHT;
-    }
-
+    /**
+     * Getter for ball
+     * @return ball
+     */
     public Ball getBall() {
         return ball;
     }
 
+    /**
+     * Getter for leftPaddle
+     * @return leftPaddle
+     */
     public Paddle getLeftPaddle() {
         return leftPaddle;
     }
 
+    /**
+     * Getter for rightPaddle
+     * @return rightPaddle
+     */
     public Paddle getRightPaddle() {
         return rightPaddle;
     }

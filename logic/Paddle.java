@@ -2,14 +2,16 @@ package logic;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Paddle.java
+ * Willem Hunt 2018
+ * Manages position and motion of paddles
+ */
 public class Paddle {
 
-    public static final Color COLOR = Color.WHITE;
-    public final static int PADDLE_HEIGHT = 100;
-    public final static int PADDLE_WIDTH  = 20;
-
-    private final int width;
-    private final int height;
+    public static final Color   COLOR   = Color.WHITE;
+    public final static int     HEIGHT  = 100;
+    public final static int     WIDTH   = 20;
 
     private int yPos;
     private int yVel;
@@ -18,13 +20,9 @@ public class Paddle {
      * Constructor.  Takes in a starting Y position and a Board to link to.
      * @param yPos Y position.
      */
-    Paddle(int yPos, Board board, int width, int height){
-
+    Paddle(int yPos, Board board){
         this.yPos   = yPos;
-        this.width  = width;
-        this.height = height;
         this.yVel = 0;
-
     }
 
     /**

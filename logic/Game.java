@@ -3,14 +3,20 @@ package logic;
 import gui.Graphics;
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * Game.java
+ * Willem Hunt 2018
+ * Creates and runs the game, along with calling Graphics painting
+ */
 public class Game implements Runnable {
 
     private final static int    WIN_SCORE  = 10;
     private final        float  INTERVAL;
 
-    private final   Board               board;
+    private final Board board;
     private final   Paddle              leftPaddle;
     private final   Paddle              rightPaddle;
+    private final Ball ball;
     private final   GraphicsContext     context;
 
     private boolean keyPressed;
@@ -24,13 +30,14 @@ public class Game implements Runnable {
      * @param rightPaddle Right Paddle.
      * @param context GraphicsContext.
      */
-    public Game(int frameRate, Board board, Paddle leftPaddle, Paddle rightPaddle, GraphicsContext context){
+    public Game(int frameRate, Board board, Paddle leftPaddle, Paddle rightPaddle, Ball ball, GraphicsContext context){
 
         INTERVAL = 1000.0f/frameRate;
 
         this.board = board;
         this.leftPaddle = leftPaddle;
         this.rightPaddle = rightPaddle;
+        this.ball = ball;
         this.context = context;
 
         keyPressed = false;
